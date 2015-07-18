@@ -1,0 +1,16 @@
+.top {
+  background-color: #009688;
+}
+
+.title {
+  color: white;
+}
+
+.icon {
+  color: white;
+}
+
+.defeated {
+  color: #9e9e9e;
+  text-decoration: line-through;
+}
