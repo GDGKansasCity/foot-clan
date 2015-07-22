@@ -5,26 +5,26 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'firebase'])
 
-.factory('Villians', ['$firebaseArray', function($firebaseArray) {
-  var villiansRef = new Firebase('http://foot-clan.firebaseio.com/villians');
-  return $firebaseArray(villiansRef);
+.factory('Villains', ['$firebaseArray', function($firebaseArray) {
+  var villainsRef = new Firebase('http://foot-clan.firebaseio.com/villains');
+  return $firebaseArray(villainsRef);
 }])
 
-.controller('ListCtrl', function($scope, $ionicListDelegate, Villians) {
-  $scope.villians = Villians;
+.controller('ListCtrl', function($scope, $ionicListDelegate, Villains) {
+  $scope.villains = Villains;
   
-  $scope.addVillian = function() {
-    var name = prompt('What TMNT villian would you like to add to the Foot Clan?');
+  $scope.addVillain = function() {
+    var name = prompt('What TMNT villain would you like to add to the Foot Clan?');
     if (name) {
-      $scope.villians.$add({
+      $scope.villains.$add({
         'name': name
       });
     }
   };
   
-  $scope.defeated = function(villian) {
-    var villianRef = new Firebase('http://foot-clan.firebaseio.com/villians/' + villian.$id);
-    villianRef.child('status').set('defeated');
+  $scope.defeated = function(villain) {
+    var villainRef = new Firebase('http://foot-clan.firebaseio.com/villains/' + villain.$id);
+    villainRef.child('status').set('defeated');
     $ionicListDelegate.closeOptionButtons();
   };
 })

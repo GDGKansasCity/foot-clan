@@ -28,15 +28,15 @@
   </head>
   <body ng-app="starter" ng-controller="ListCtrl">
     <ion-header-bar class="top">
-      <h1 class="title">Foot Clan Villians</h1>
-      <button class="button button-icon ion-plus" ng-click="addVillian()"></button>
+      <h1 class="title">Foot Clan Villains</h1>
+      <button class="button button-icon ion-plus" ng-click="addVillain()"></button>
     </ion-header-bar>
     
     <ion-content>
       <ion-list>
-        <ion-item ng-repeat="villian in villians" ng-class="{defeated: villian.status == 'defeated'}">
-          {{villian.name}}
-          <ion-option-button class="button-royal" ng-click="defeated(villian)">
+        <ion-item ng-repeat="villain in villains" ng-class="{defeated: villain.status == 'defeated'}">
+          {{villain.name}}
+          <ion-option-button class="button-royal" ng-click="defeated(villain)">
             <i class="icon ion-checkmark"></i>
           </ion-option-button>
         </ion-item>
